@@ -65,6 +65,34 @@ namespace ADODotNetDemo
                 con.Close();
             }
         }
+        public static void insert()
+        {
+            try
+            {
+                //writing sql query
+                string query = " insert into Customer values ('Nikhil','Nanded'),('Nishatai','Sambhajinagar')";
+                SqlCommand cm = new SqlCommand(query, con);
+
+                //opening connection
+                con.Open();
+
+                //Executing sql query
+                cm.ExecuteNonQuery();
+
+                //Displaying message
+                Console.WriteLine("Data inserted successfully");
+                Console.WriteLine("------------------------------");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+
 
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADODotNetDemo
 {
-    public class CustomerMode
+    public class CustomerModel
     {
         public int Id { get; set; }
         public string Name { get; set; }

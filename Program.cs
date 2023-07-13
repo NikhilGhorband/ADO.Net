@@ -5,9 +5,9 @@
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-            Customer.CreateDatabase();
-            Customer.CreateTable();
-            
+            //Customer.CreateDatabase();
+            //Customer.CreateDatabase();
+            Customer.insert();
         }
     }
 }
