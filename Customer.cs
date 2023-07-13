@@ -70,7 +70,7 @@ namespace ADODotNetDemo
             try
             {
                 //writing sql query
-                string query = " insert into Customer values ('pallavi','amaravati'),('rashmi','akola')";
+                string query = " insert into Customer values ('Nikhil','Nanded'),('Nishatai','Sambhajinagar')";
                 SqlCommand cm = new SqlCommand(query, con);
 
                 //opening connection
@@ -101,6 +101,26 @@ namespace ADODotNetDemo
                 con.Open();
                 cmd.ExecuteNonQuery();
                 Console.WriteLine("Data deleted from the table.");
+            }
+            catch (Exception e)
+            {
+
+                Console.WriteLine("Somethiing went Wrong." + e);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
+        public static void UpdateTable()
+        {
+            try
+            {
+                string query = "UPDATE  Customer SET City = 'Akola' WHERE Id = 1";
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Data Updated into the table.");
             }
             catch (Exception e)
             {
