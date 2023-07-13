@@ -70,7 +70,7 @@ namespace ADODotNetDemo
             try
             {
                 //writing sql query
-                string query = " insert into Customer values ('Nikhil','Nanded'),('Nishatai','Sambhajinagar')";
+                string query = " insert into Customer values ('pallavi','amaravati'),('rashmi','akola')";
                 SqlCommand cm = new SqlCommand(query, con);
 
                 //opening connection
@@ -92,7 +92,26 @@ namespace ADODotNetDemo
                 con.Close();
             }
         }
+        public static void Delete()
+        {
+            try
+            {
+                string query = "DELETE FROM Customer WHERE Id = 2";
+                SqlCommand cmd = new SqlCommand(query, con);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                Console.WriteLine("Data deleted from the table.");
+            }
+            catch (Exception e)
+            {
 
+                Console.WriteLine("Somethiing went Wrong." + e);
+            }
+            finally
+            {
+                con.Close();
+            }
+        }
 
     }
 }
